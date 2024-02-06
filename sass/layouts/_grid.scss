@@ -7,16 +7,54 @@
   display: grid;
   grid-template-columns: 1fr[izquierda] 1536px[centro] 1fr[derecha];
   grid-template-rows: 10px[padding-top] auto[todo el contenido];
-
+  
   .container{
     grid-column: 2/3;
     grid-row: 2/3;
   }
+
+  // Grid de container
+  .grid3x3-container{
+    display: grid;
+    grid-template-rows: 80px[header] 3200px[main] 310px[footer];
+    
+
+    header {
+      display: grid;
+      place-items: center;
+
+      .menu {
+      display: grid;
+      grid-template-columns: repeat(3, auto);
+      column-gap: 20px;
+      }
+
+    }
+
+    main {
+      display: grid;
+      grid-template-rows: calc(100vh - 80px)[banner] auto[boton];
+      
+      .banner {
+        display: grid;
+        grid-template-rows: 90%[contenido] 10%[boton];
+        place-content: center;
+
+        a {
+          grid-row: 2/3;
+          align-self: center;
+        }
+      }
+    }
+
+    footer{
+      display: grid;
+      grid-template-rows: 90%[cuerpo] 10%[margin-bottom];
+      p{
+        justify-self: center;
+        align-self: end;
+      }
+    }
+  }
 }
 
-// Grid de container
-.grid3x3-container{
-  display: grid;
-  grid-template-columns: 1fr[izquierda] 1fr[menu] 1fr[derecha];
-  grid-template-rows: 80px[header] 3200px[main] 310px[footer];
-}

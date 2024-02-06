@@ -2,3 +2,20 @@
 // @Layout: layout
 // **************************************
 
+body{
+  background-image: url(../../src/img/desktop/fondo.avif);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  .container{    
+    width: 100%;
+    min-width: 1536px;
+    min-height: 100vh;
+
+    main {
+      background-color: green;
+      position: relative;
+    }
+  }
+}

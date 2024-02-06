@@ -323,18 +323,54 @@ template {
           box-sizing: border-box;
 }
 
-header {
+a {
+  text-decoration: none;
+  color: rgb(19, 19, 19);
+  text-align: center;
+  width: 100px;
+  height: 30px;
+  background-color: red;
+  line-height: 1.9;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+.boton__fixet {
+  position: fixed;
+  text-decoration: none;
+  background-color: red;
+  top: 50%;
+  -ms-grid-column-align: end;
+      justify-self: end;
+}
+
+.menu {
+  text-align: center;
+}
+.menu a {
+  text-decoration: none;
+  color: rgb(33, 33, 33);
+}
+
+footer {
+  background-color: rgb(33, 33, 33);
+  color: white;
+}
+
+body {
+  background-image: url(../../src/img/desktop/fondo.avif);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+body .container {
   width: 100%;
-  height: 60px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  min-width: 1536px;
+  min-height: 100vh;
+}
+body .container main {
+  background-color: green;
+  position: relative;
 }
 
 .grid3x4-body {
@@ -533,192 +569,56 @@ header {
   -ms-grid-row-span: 1;
   grid-row: 2/3;
 }
-
-.grid3x3-container {
+.grid3x4-body .grid3x3-container {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr [izquierda] 1fr [menu] 1fr [derecha];
-  grid-template-columns: 1fr [izquierda] 1fr [menu] 1fr [derecha];
   -ms-grid-rows: 80px [header] 3200px [main] 310px [footer];
   grid-template-rows: 80px [header] 3200px [main] 310px [footer];
 }
-
-.grid3x3-container > *:nth-child(1) {
-  -ms-grid-row: 1;
-  -ms-grid-column: 1;
+.grid3x4-body .grid3x3-container header {
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
 }
-
-.grid3x3-container > *:nth-child(2) {
-  -ms-grid-row: 1;
-  -ms-grid-column: 2;
+.grid3x4-body .grid3x3-container header .menu {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto 20px auto 20px auto;
+  grid-template-columns: repeat(3, auto);
+  -webkit-column-gap: 20px;
+     -moz-column-gap: 20px;
+          column-gap: 20px;
 }
-
-.grid3x3-container > *:nth-child(3) {
-  -ms-grid-row: 1;
-  -ms-grid-column: 3;
+.grid3x4-body .grid3x3-container main {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: calc(100vh - 80px) [banner] auto [boton];
+  grid-template-rows: calc(100vh - 80px) [banner] auto [boton];
 }
-
-.grid3x3-container > *:nth-child(4) {
-  -ms-grid-row: 1;
-  -ms-grid-column: 4;
+.grid3x4-body .grid3x3-container main .banner {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 90% [contenido] 10% [boton];
+  grid-template-rows: 90% [contenido] 10% [boton];
+  place-content: center;
 }
-
-.grid3x3-container > *:nth-child(5) {
-  -ms-grid-row: 1;
-  -ms-grid-column: 5;
-}
-
-.grid3x3-container > *:nth-child(6) {
-  -ms-grid-row: 1;
-  -ms-grid-column: 6;
-}
-
-.grid3x3-container > *:nth-child(7) {
+.grid3x4-body .grid3x3-container main .banner a {
   -ms-grid-row: 2;
-  -ms-grid-column: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 2/3;
+  -ms-grid-row-align: center;
+      align-self: center;
 }
-
-.grid3x3-container > *:nth-child(8) {
-  -ms-grid-row: 2;
-  -ms-grid-column: 2;
+.grid3x4-body .grid3x3-container footer {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 90% [cuerpo] 10% [margin-bottom];
+  grid-template-rows: 90% [cuerpo] 10% [margin-bottom];
 }
-
-.grid3x3-container > *:nth-child(9) {
-  -ms-grid-row: 2;
-  -ms-grid-column: 3;
-}
-
-.grid3x3-container > *:nth-child(10) {
-  -ms-grid-row: 2;
-  -ms-grid-column: 4;
-}
-
-.grid3x3-container > *:nth-child(11) {
-  -ms-grid-row: 2;
-  -ms-grid-column: 5;
-}
-
-.grid3x3-container > *:nth-child(12) {
-  -ms-grid-row: 2;
-  -ms-grid-column: 6;
-}
-
-.grid3x3-container > *:nth-child(13) {
-  -ms-grid-row: 3;
-  -ms-grid-column: 1;
-}
-
-.grid3x3-container > *:nth-child(14) {
-  -ms-grid-row: 3;
-  -ms-grid-column: 2;
-}
-
-.grid3x3-container > *:nth-child(15) {
-  -ms-grid-row: 3;
-  -ms-grid-column: 3;
-}
-
-.grid3x3-container > *:nth-child(16) {
-  -ms-grid-row: 3;
-  -ms-grid-column: 4;
-}
-
-.grid3x3-container > *:nth-child(17) {
-  -ms-grid-row: 3;
-  -ms-grid-column: 5;
-}
-
-.grid3x3-container > *:nth-child(18) {
-  -ms-grid-row: 3;
-  -ms-grid-column: 6;
-}
-
-.grid3x3-container > *:nth-child(19) {
-  -ms-grid-row: 4;
-  -ms-grid-column: 1;
-}
-
-.grid3x3-container > *:nth-child(20) {
-  -ms-grid-row: 4;
-  -ms-grid-column: 2;
-}
-
-.grid3x3-container > *:nth-child(21) {
-  -ms-grid-row: 4;
-  -ms-grid-column: 3;
-}
-
-.grid3x3-container > *:nth-child(22) {
-  -ms-grid-row: 4;
-  -ms-grid-column: 4;
-}
-
-.grid3x3-container > *:nth-child(23) {
-  -ms-grid-row: 4;
-  -ms-grid-column: 5;
-}
-
-.grid3x3-container > *:nth-child(24) {
-  -ms-grid-row: 4;
-  -ms-grid-column: 6;
-}
-
-.grid3x3-container > *:nth-child(25) {
-  -ms-grid-row: 5;
-  -ms-grid-column: 1;
-}
-
-.grid3x3-container > *:nth-child(26) {
-  -ms-grid-row: 5;
-  -ms-grid-column: 2;
-}
-
-.grid3x3-container > *:nth-child(27) {
-  -ms-grid-row: 5;
-  -ms-grid-column: 3;
-}
-
-.grid3x3-container > *:nth-child(28) {
-  -ms-grid-row: 5;
-  -ms-grid-column: 4;
-}
-
-.grid3x3-container > *:nth-child(29) {
-  -ms-grid-row: 5;
-  -ms-grid-column: 5;
-}
-
-.grid3x3-container > *:nth-child(30) {
-  -ms-grid-row: 5;
-  -ms-grid-column: 6;
-}
-
-.grid3x3-container > *:nth-child(31) {
-  -ms-grid-row: 6;
-  -ms-grid-column: 1;
-}
-
-.grid3x3-container > *:nth-child(32) {
-  -ms-grid-row: 6;
-  -ms-grid-column: 2;
-}
-
-.grid3x3-container > *:nth-child(33) {
-  -ms-grid-row: 6;
-  -ms-grid-column: 3;
-}
-
-.grid3x3-container > *:nth-child(34) {
-  -ms-grid-row: 6;
-  -ms-grid-column: 4;
-}
-
-.grid3x3-container > *:nth-child(35) {
-  -ms-grid-row: 6;
-  -ms-grid-column: 5;
-}
-
-.grid3x3-container > *:nth-child(36) {
-  -ms-grid-row: 6;
-  -ms-grid-column: 6;
+.grid3x4-body .grid3x3-container footer p {
+  -ms-grid-column-align: center;
+      justify-self: center;
+  -ms-flex-item-align: end;
+      -ms-grid-row-align: end;
+      align-self: end;
 }
